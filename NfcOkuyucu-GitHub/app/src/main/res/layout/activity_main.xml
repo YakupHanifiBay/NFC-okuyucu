@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/etServer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bilgisayar adresi (ör. 192.168.1.113:8080)"
+            android:importantForAutofill="no"
+            android:inputType="textUri|textNoSuggestions"
+            android:saveEnabled="false" />
+
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="📷 Kimlik Arkasını Kamerayla Tara (Otomatik)" />
+
+        <Button
+            android:id="@+id/btnManualToggle"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⌨️ Kart Erişim (CAN / MRZ) Bilgilerini Elle Gir" />
+
+        <LinearLayout
+            android:id="@+id/layoutManualEntry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="#F2F4F8"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvManualTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kart Erişim (CAN / MRZ) Bilgilerini Elle Girin"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvManualHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="8dp"
+                android:text="Girilen bilgiler hiçbir yere kaydedilmez, yalnızca anlık okuma için kullanılır."
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/etDocNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Seri No / CAN (ör. A01B23456)"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters|textNoSuggestions|textVisiblePassword"
+                android:maxLength="9"
+                android:saveEnabled="false" />
+
+            <EditText
+                android:id="@+id/etDob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Doğum Tarihi (GG.AA.YYYY veya YYAAGG)"
+                android:importantForAutofill="no"
+                android:inputType="datetime"
+                android:saveEnabled="false" />
+
+            <EditText
+                android:id="@+id/etExp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Son Geçerlilik (GG.AA.YYYY veya YYAAGG)"
+                android:importantForAutofill="no"
+                android:inputType="datetime"
+                android:saveEnabled="false" />
+
+            <Button
+                android:id="@+id/btnApplyManual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="✅ Elle Girilen Bilgileri Kullan (Anlık)" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMrzDurum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:text="Kart erişim anahtarı: Henüz taranmadı"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:text="1) 'Kamerayla Tara' ile kartın arkasını okutun.\n2) Kartı telefonun arkasına (NFC) yaklaştırın."
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="160dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+</ScrollView>
